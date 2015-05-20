@@ -10,19 +10,38 @@ import src.ctec.hipster.controller.HipsterAppController;
 
 public class HipsterPanel extends JPanel
 {
+	/**
+	 * starts the controller
+	 */
 	private HipsterAppController baseController;
+	/**
+	 * makes a list that uses the albums
+	 */
 	private JComboBox albumBox;
+	/**
+	 * the text that changes depending on what song is chosen
+	 */
 	private JLabel albumLabel;
+	/**
+	 * the picture of me
+	 */
 	private JLabel hipsterImage;
+	/**
+	 * they way to hold the things in the panel
+	 */
 	private SpringLayout baseLayout;
 	
+	/**
+	 * sets the info for everything
+	 * @param baseController
+	 */
 	public HipsterPanel(HipsterAppController baseController)
 	{
 		this.baseController = baseController;
 		baseLayout = new SpringLayout();
 		albumLabel = new JLabel("Album Information");
 		
-		hipsterImage = new JLabel("Me as a Hipster", new ImageIcon(HipsterPanel.class.getResource("/src/ctec/hipster/view/images/hipsTyler.jpg")), JLabel.CENTER);
+		hipsterImage = new JLabel("Me as a Hipster", new ImageIcon(HipsterPanel.class.getResource("/src/ctec/hipster/view/images/isaac3.jpg")), JLabel.CENTER);
 		
 		albumBox = new JComboBox();
 		baseLayout.putConstraint(SpringLayout.NORTH, albumBox, 80, SpringLayout.NORTH, this);
@@ -32,7 +51,9 @@ public class HipsterPanel extends JPanel
 		setupLayout();
 		setupListeners();
 	}
-	
+	/**
+	 * sets the model 
+	 */
 	private void setupComboBox()
 	{
 		albumBox.setModel(new DefaultComboBoxModel(baseController.getMyHipster().getHipsterAlbums()));

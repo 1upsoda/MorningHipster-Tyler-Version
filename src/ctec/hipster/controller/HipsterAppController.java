@@ -10,9 +10,17 @@ import src.ctec.hipster.view.HipsterFrame;
  */
 public class HipsterAppController
 {
+	/**
+	 * sets the frame for the panel to go in
+	 */
 	private HipsterFrame baseFrame;
+	/**
+	 * sets the hipster so info can be added to it
+	 */
 	private Hipster myHipster;
-	
+	/**
+	 * starts the frame and the hipster with name tyler and age 17
+	 */
 	public HipsterAppController()
 	{
 		
@@ -21,12 +29,17 @@ public class HipsterAppController
 		baseFrame = new HipsterFrame(this);
 		
 	}
-	
+	/**
+	 * returns the info held inside hipster
+	 * @return
+	 */
 	public Hipster getMyHipster()
 	{
 		return myHipster;
 	}
-	
+	/**
+	 * creates an album array with these titles
+	 */
 	private void createAlbumArray()
 	{
 		String [] tempHipster = myHipster.getHipsterAlbums();
